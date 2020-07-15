@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <title>FACEMESH2.0</title>
+    <button onclick="nextbattle('<%= war[0]._id%>')"><%= war[0].name%></button>
+    <button onclick="nextbattle('<%= war[1]._id%>')"><%= war[1].name%></button>
+</html>
+
+<script>
+async function nextbattle(id) {
+  await axios.patch('http://localhost:3000/winner/'+id)
+  window.location.href = ('http://localhost:3000/') 
+}
+</script>
