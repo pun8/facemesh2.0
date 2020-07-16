@@ -9,8 +9,12 @@
 </html>
 
 <script>
-async function nextbattle(id) {
-  await axios.patch('http://localhost:3000/winner/'+id)
-  window.location.href = ('http://localhost:3000/') 
+function redirect(e){
+  window.location.href = ('http://localhost:3000/')
+}
+function nextbattle(id) {
+  axios.patch('http://localhost:3000/winner/'+id).then(()=>{
+    redirect()
+  })
 }
 </script>

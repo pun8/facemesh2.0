@@ -5,7 +5,7 @@ const router = express.Router()
 
 //add new con
 router.post('/addcon',async(req,res)=>{
-    const co = new Contestant(req.body)
+    const con = new Contestant(req.body)
 
     try{
         await con.save()
